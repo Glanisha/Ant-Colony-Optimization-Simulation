@@ -14,9 +14,21 @@ const Controls = ({ onRun, onDijkstra }) => {
   };
 
   return (
-    <div>
-      <div className="mb-4">
-        <label className="block">Number of Ants</label>
+    <div className="bg-[#0f172a] text-slate-100 p-6 rounded-2xl shadow-2xl border border-slate-700 w-full">
+      <h2 className="text-2xl font-bold mb-6 text-cyan-300 tracking-wide">
+        ACO Controls
+      </h2>
+
+      <div className="mb-5">
+        <div className="flex justify-between items-center mb-2">
+          <label className="text-slate-300 font-medium">
+            Number of Ants
+          </label>
+          <span className="text-cyan-300 font-semibold">
+            {params.num_ants}
+          </span>
+        </div>
+
         <input
           type="range"
           name="num_ants"
@@ -24,12 +36,20 @@ const Controls = ({ onRun, onDijkstra }) => {
           max="100"
           value={params.num_ants}
           onChange={handleChange}
-          className="w-full"
+          className="w-full accent-cyan-400 cursor-pointer"
         />
-        <span>{params.num_ants}</span>
       </div>
-      <div className="mb-4">
-        <label className="block">Alpha (Pheromone Influence)</label>
+
+      <div className="mb-5">
+        <div className="flex justify-between items-center mb-2">
+          <label className="text-slate-300 font-medium">
+            Alpha (Pheromone Influence)
+          </label>
+          <span className="text-cyan-300 font-semibold">
+            {params.alpha}
+          </span>
+        </div>
+
         <input
           type="range"
           name="alpha"
@@ -38,12 +58,20 @@ const Controls = ({ onRun, onDijkstra }) => {
           step="0.1"
           value={params.alpha}
           onChange={handleChange}
-          className="w-full"
+          className="w-full accent-cyan-400 cursor-pointer"
         />
-        <span>{params.alpha}</span>
       </div>
-      <div className="mb-4">
-        <label className="block">Beta (Heuristic Influence)</label>
+
+      <div className="mb-5">
+        <div className="flex justify-between items-center mb-2">
+          <label className="text-slate-300 font-medium">
+            Beta (Heuristic Influence)
+          </label>
+          <span className="text-cyan-300 font-semibold">
+            {params.beta}
+          </span>
+        </div>
+
         <input
           type="range"
           name="beta"
@@ -52,12 +80,20 @@ const Controls = ({ onRun, onDijkstra }) => {
           step="0.1"
           value={params.beta}
           onChange={handleChange}
-          className="w-full"
+          className="w-full accent-cyan-400 cursor-pointer"
         />
-        <span>{params.beta}</span>
       </div>
-      <div className="mb-4">
-        <label className="block">Evaporation Rate</label>
+
+      <div className="mb-5">
+        <div className="flex justify-between items-center mb-2">
+          <label className="text-slate-300 font-medium">
+            Evaporation Rate
+          </label>
+          <span className="text-cyan-300 font-semibold">
+            {params.evaporation_rate}
+          </span>
+        </div>
+
         <input
           type="range"
           name="evaporation_rate"
@@ -66,12 +102,20 @@ const Controls = ({ onRun, onDijkstra }) => {
           step="0.01"
           value={params.evaporation_rate}
           onChange={handleChange}
-          className="w-full"
+          className="w-full accent-cyan-400 cursor-pointer"
         />
-        <span>{params.evaporation_rate}</span>
       </div>
-      <div className="mb-4">
-        <label className="block">Iterations</label>
+
+      <div className="mb-6">
+        <div className="flex justify-between items-center mb-2">
+          <label className="text-slate-300 font-medium">
+            Iterations
+          </label>
+          <span className="text-cyan-300 font-semibold">
+            {params.iterations}
+          </span>
+        </div>
+
         <input
           type="range"
           name="iterations"
@@ -80,19 +124,20 @@ const Controls = ({ onRun, onDijkstra }) => {
           step="10"
           value={params.iterations}
           onChange={handleChange}
-          className="w-full"
+          className="w-full accent-cyan-400 cursor-pointer"
         />
-        <span>{params.iterations}</span>
       </div>
+
       <button
         onClick={() => onRun(params)}
-        className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-2"
+        className="w-full bg-cyan-500 hover:bg-cyan-400 transition-all duration-200 text-slate-900 font-bold py-3 px-4 rounded-xl shadow-lg mb-3"
       >
         Run ACO
       </button>
+
       <button
         onClick={onDijkstra}
-        className="w-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+        className="w-full bg-slate-700 hover:bg-slate-600 transition-all duration-200 text-white font-bold py-3 px-4 rounded-xl shadow-lg border border-slate-500"
       >
         Run Dijkstra
       </button>
