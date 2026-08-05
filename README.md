@@ -2,8 +2,6 @@
 
 This project is a full-stack application that visualizes the Ant Colony Optimization (ACO) algorithm for finding the shortest path in a graph. It includes an interactive graph editor, real-time visualization of the ACO simulation, and a comparison with Dijkstra's algorithm.
 
-![ACO Dashboard](./im.png)
-
 ## Tech Stack
 
 - **Backend:** Python, FastAPI
